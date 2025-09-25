@@ -1,23 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>HR Dept Org Chart</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
-    embed {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dept Org Chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .pdf-container {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+        .pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+        
+        /* Hide scrollbars but keep functionality */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 <body>
-  <!-- This will directly render the PDF content full-page -->
-  <embed src="HRDeptOrgChart.pdf" type="application/pdf">
+    <div class="pdf-container">
+        <iframe 
+            class="pdf-iframe"
+            src="HRDeptOrgChart.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0&view=FitH"
+            type="application/pdf">
+        </iframe>
+    </div>
 </body>
 </html>
